@@ -50,7 +50,6 @@ namespace MvcMovie.Controllers
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
                 Movies = await movies.ToListAsync()
             };
-
             return View(movieGenreVM);
         }
 
