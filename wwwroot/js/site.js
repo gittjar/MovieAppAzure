@@ -1,9 +1,5 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-
+﻿
+// message input etc reset
 const msgInput = document.getElementById('messageInput');
 const button = document.getElementById('reset');
 
@@ -18,4 +14,8 @@ button.onclick = () => {
     }
 }
 
-
+// hide infobox after load 5s
+setTimeout(() => {
+    const boxi = document.getElementById('infobox');
+    boxi.style.display = 'none';
+}, 5000); 
