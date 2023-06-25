@@ -20,7 +20,7 @@ namespace MvcMovie.Migrations
                     Title = table.Column<string>(type: "nvarchar(160)", maxLength: 160, nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     ProductionComp = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
                     Rating = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true)

@@ -22,9 +22,9 @@ namespace MvcMovie.Models
         [StringLength(30)]
         public string? Genre { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Please Enter a price between 1 and 100")]
+        [Range(1.00, 100.00, ErrorMessage = "Please Enter a price between 1 and 100")]
         [DataType(DataType.Currency)]
-        [Column(TypeName = "decimal(18, 2)")]
+        [Column(TypeName = "decimal(10, 2)")]
         public decimal Price { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$", ErrorMessage = "Please Enter a Production company!")]

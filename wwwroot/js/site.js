@@ -15,7 +15,55 @@ button.onclick = () => {
 }
 
 // hide infobox after load 5s
+const boxi = document.getElementById('infobox');
+let opacity = 1;
+const reduceOpacity = setInterval(() => {
+    if (opacity > 0) {
+        opacity = opacity - 0.1;
+        boxi.style.opacity = opacity;
+    } else {
+        clearInterval(reduceOpacity);
+        boxi.style.display = 'none';
+    }
+}, 500);
+
 setTimeout(() => {
-    const boxi = document.getElementById('infobox');
+    clearInterval(reduceOpacity);
     boxi.style.display = 'none';
-}, 5000); 
+}, 5000);
+
+// Button click handlers
+document.getElementById("greenButton").addEventListener("click", function () {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "lightgreen";
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].style.color = "olive";
+    }
+
+    // Change table background and text color
+    var table = document.getElementById("movieTable");
+    table.style.backgroundColor = "black";
+    table.style.color = "lightgreen";
+});
+
+document.getElementById("fontButton").addEventListener("click", function () {
+    document.body.style.fontFamily = "Roboto, sans-serif";
+    document.body.style.fontSize = "18px";
+});
+
+document.getElementById("resetButton").addEventListener("click", function () {
+    document.body.style.backgroundColor = "";
+    document.body.style.color = "";
+    document.body.style.fontFamily = "";
+    document.body.style.fontSize = "";
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].style.color = "";
+    }
+    // Reset table background and text color
+    var table = document.getElementById("movieTable");
+    table.style.backgroundColor = "";
+    table.style.color = "";
+
+});
