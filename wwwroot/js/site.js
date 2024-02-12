@@ -1,16 +1,12 @@
-﻿
-// message input etc reset
+﻿// message input etc reset
 const msgInput = document.getElementById('messageInput');
 const button = document.getElementById('reset');
 
 const options = document.querySelectorAll('select option');
 button.onclick = () => {
-    for (var i = 0; i < options.length; i--) {
+    for (var i = 0; i < options.length; i++) {
         options[i].selected = options[i].defaultSelected;
-          // Send value to server -->
-        // console.log(msgInput.value);
         msgInput.value = '';
-
     }
 }
 
@@ -38,18 +34,34 @@ document.getElementById("greenButton").addEventListener("click", function () {
     document.body.style.color = "lightgreen";
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
-        links[i].style.color = "olive";
+        links[i].style.color = "white";
     }
+
+        // Change navbar links color
+        var navbarLinks = document.getElementById("navbar").getElementsByTagName("a");
+        for (var i = 0; i < navbarLinks.length; i++) {
+            navbarLinks[i].style.color = "blue";
+        }
+    
 
     // Change table background and text color
     var table = document.getElementById("movieTable");
+    var navbar = document.getElementById("navbar");
+
     table.style.backgroundColor = "black";
     table.style.color = "lightgreen";
+    navbar.style.backgroundColor = "black";
+    navbar.style.color = "lightgreen";
 });
 
 document.getElementById("fontButton").addEventListener("click", function () {
     document.body.style.fontFamily = "Roboto, sans-serif";
     document.body.style.fontSize = "18px";
+
+    // Change navbar font
+    var navbar = document.getElementById("navbar");
+    navbar.style.fontFamily = "Roboto, sans-serif";
+    navbar.style.fontSize = "18px";
 });
 
 document.getElementById("resetButton").addEventListener("click", function () {
@@ -61,9 +73,21 @@ document.getElementById("resetButton").addEventListener("click", function () {
     for (var i = 0; i < links.length; i++) {
         links[i].style.color = "";
     }
+
+      // Reset navbar links color
+      var navbarLinks = document.getElementById("navbar").getElementsByTagName("a");
+      for (var i = 0; i < navbarLinks.length; i++) {
+          navbarLinks[i].style.color = "";
+      }
+
     // Reset table background and text color
     var table = document.getElementById("movieTable");
+    var navbar = document.getElementById("navbar");
+
     table.style.backgroundColor = "";
     table.style.color = "";
-
+    navbar.style.backgroundColor = "";
+    navbar.style.color = "";
+    navbar.style.fontFamily = "";
+    navbar.style.fontSize = "";
 });
